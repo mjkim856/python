@@ -79,4 +79,29 @@ print(type(a), type(b), type(c), type(d))
 
 # --------------------------------------
 
+print("\n빈 문자열 만들기\n변수 타입과 길이 출력")
+b_str1 = ''
+b_str2 = str()
 
+print(type(b_str1), len(b_str1))
+print(type(b_str1), len(b_str1))
+
+
+# 문자열 연산
+str_o1 = "Python"
+str_o2 = "Apple"
+str_o3 = "How are you doing?"
+str_o4 = "Seoul Deajeon Busan Jinju"
+
+print("\n문자열 연산")
+print(3 * str_o1)
+print(str_o1 + str_o2)
+print(dir(str_o1))
+print('y' in str_o1)
+print('n' in str_o1)
+print('P' not in str_o2)
+
+# ip주소로만 시작해라(grep), 정렬해라(sort), 카운트해라(uniq), 20개 이상
+# awk '{print $3}' lastb.txt | grep ^[0-9] | sort -n | uniq -c
+# awk '{print $3}' lastb.txt | grep ^[0-9] | sort -n | uniq -c | awk '$1 >=20{print $0}'
+# 이걸 사용해서 방화벽이랑 뭐... 브루트포스 공격 방어 가능하다. 
