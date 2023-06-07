@@ -245,30 +245,106 @@ for i in numalp:
 print("1번:", numalp1)
 
 # alpha 리스트를 3번 곱해서 alpha3을 만들고 해당 리스트를 이용해서 문자열 "aaabbbcccdddeee"를 만들어 보시오.
-print("2번:", numalp)
-string1=""
+string1 = ""
+list1 = ['a','b','c','d','e']
+list2 = list1*3
 
-alpha=['a','b','c','d','e']
-
-alpha3=alpha*3
-
-alpha3=['a','b','c','d','e','a','b','c','d','e','a','b','c','d','e']
-
-for x in alpha:
-	for y in alpha3:
+# 방법 1
+for x in list1:
+	for y in list2:
 		if x == y :
-			string1=string1+y
-print("alpha3 : {}".format(alpha3)) 
-
+			string1 = string1 + y
+# print("list2 : {}".format(list2))  ?? 무슨 소린지
 print(string1)
 
-string2=""
+# 방법 2
+string2 = ""
+for x in list1:
+	while x in list2:
+		string2 = string2 + list2.pop(list2.index(x))
+print(string2)
 
-for x in alpha:
-	while x in alpha3:
-		string2=string2+alpha3.pop(alpha3.index(x))
+# --------------------- 튜플 ---------------------
+# 튜플 자료형(순서O, 중복O, 수정X,삭제X)  <-- [ 불변 - immutable ]  중요데이터를 저장하고 변경하지 않을때 사용
+# 선언
+print("\n튜플 예제")
+a = ()
+b = (1,)  #<--- 주의 원소가 하나일때는 , 를 찍어줘야 함
+print(type(a), type(b))
 
-print("alpha3 : {}".format(alpha3))
+# 수정 X
+# d[0] = 1500
+# print(d)
+# TypeError: 'tuple' object does not support item assignment
 
-print(alpha3)
-print(string1)
+# 삭제 X
+# d.remove(1000)
+# print(d)
+
+# list 형변환을 통한 수정과 삭제
+c = (11,12,13,14)
+d = (100, 1000,'Ace', 'Base', 'Captine')
+e = (100, 1000, ('Ace', 'Base', 'Captine'))
+
+d = list(d)         # list로 형변환
+print(type(d))      # <class 'list'>
+d.append(10000)
+d.remove(1000)
+d = tuple(d)
+print(type(d), d)   # <class 'tuple'> (100, 'Ace', 'Base', 'Captine', 10000)
+
+# 인덱싱
+print('\n튜플 인덱싱 예제')
+print(d)                    # (100, 'Ace', 'Base', 'Captine', 10000)
+print(e)                    # (100, 1000, ('Ace', 'Base', 'Captine'))
+print('d:', type(d), d)     # <class 'tuple'> (100, 'Ace', 'Base', 'Captine', 10000)
+print('d:', d[1])           # Ace
+print('d:', str(d[0]) + d[1] + d[1])    # 100AceAce
+print('d:', d[-1])          # 10000
+print('e:', e[-1])          # ('Ace', 'Base', 'Captine')
+print('e:', e[-1][1])       # Base
+# list 형변환, 수정, 삭제의 특징이 사라짐
+print('e:', list(e[-1][1])) # ['B', 'a', 's', 'e']
+
+# 슬라이싱
+print('\n튜플 슬라이싱 예제')
+print('d:', d[0:3])
+print('d:', d[2:])
+print('e:', e[2][1:3])
+
+# 팩킹과 언팩킹 (튜플 팩킹과 튜플 언팩킹)
+# 팩킹
+print('\n튜플 팩킹 예제')
+t = ('foo', 'bar', 'baz', 'qux')
+
+# 출력 확인, 인덱싱 가능 
+print(t)
+print(t[0])
+print(t[-1])
+
+# 언팩킹1
+print('\n튜플 언팩킹 예제')
+(x1, x2, x3, x4) = t    # 괄호를 제거해서 x1, x2, x3, x4 = t도 가능하다.
+
+# 출력확인
+print(type(x1), type(x2), type(x3), type(x4))
+print(x1, x2, x3, x4)
+
+# 언팩킹2
+print('\n튜플 언팩킹 예제 2')
+(x1, x2, x3, x4) = ('foo', 'bar', 'baz', 'qux')
+
+# 출력 확인
+print(x1, x2, x3, x4)
+
+# 팩킹 & 언팩킹
+t2 = 1, 2, 3     # t2 = (1, 2, 3) 괄호를 씌워주어도 튜플이고 안씌워줘도 튜플
+t3 = 4,          # 여기도 t3 = (4,)  와 같다
+x1, x2, x3 = t2
+x4, x5, x6 = 4, 5, 6
+
+# 출력 확인
+print(t2)
+print(t3)
+print(x1,x2,x3)
+print(x4,x5,x6)
