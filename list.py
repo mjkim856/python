@@ -348,3 +348,43 @@ print(t2)
 print(t3)
 print(x1,x2,x3)
 print(x4,x5,x6)
+
+# 좀 더 자세하게
+print()
+human = 180, 75         # 패킹
+print(human)
+height, weight = human  # 언패킹
+print(height, weight)
+
+# 언패킹하고 리스트로 묶기
+print("\n언패킹하고 리스트로 묶기")
+num = 1, 2, 3, 4, 5, 6, 7
+n1, n2, *others = num
+print(n1)
+print(n2)
+print(others)
+
+# 함수에서의 패킹,언패킹
+print("\n함수에서의 패킹,언패킹")
+def make_tuple():
+      return 1, 2, 3
+
+nums = make_tuple()
+print(nums)
+
+# 언패킹 관례
+print("\n필요한 값만 변수에 담고 싶다면?")
+human = ('james', 180, 75, 20) # 나이만 담겠다
+_, _, _, age = human
+print(age)
+
+# for 루프에서의 언패킹
+print("\nfor 루프에서의 언패킹")
+data = [('james',20),('john',21),('peter',15)]
+for name,age in data:
+    print(name, age)
+
+# ('a','b','c',[1,2,3,4]) 에서 튜플안의 리스트 구성요소 중 1,2를 문자열 형태로 바꾸어 보시오.
+t1 = 'a','b','c',[1,2,3,4]
+t1[3][:2] = '1', '2'
+print("\n",t1)
