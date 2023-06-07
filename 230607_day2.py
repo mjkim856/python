@@ -52,6 +52,7 @@ print(','.join('My life is mine.'))
 print('My life is mine.'.replace("e", "EEE"))
 print(("192.168.100.40".split(".")))
 print('  delete blank   '.strip())
+print()
 
 # 이지
 print(list("abcdef"))
@@ -65,3 +66,32 @@ a="abcdef"
 b='.'.join("abcdef")  # a.b.c.d.f
 c=b.split('.')  # ['a','b','c','d','e','f']
 print(c)
+
+# ---------------------------------------------
+
+# 리스트 연산
+print("\n리스트 연산 예제")
+l1 = [1, 2, 3, 4]
+l2 = [5, 6, 7, 8]
+print("l1 + l2 = ", l1 + l2)
+print("l1 * 3 = ", l1*3)
+print(l1[:3])
+print(l1[3:])
+
+# append, sort, reverse, insert, remove, pop, extend
+print("\nappend, sort, reverse, insert, remove, pop, extend")
+l1.append(0)
+print(l1.append(0)) # 특이하게 이 경우는 None이 뜬단 말이지?
+print(l1)
+l1.sort();      print(l1)
+l1.reverse();   print(l1)
+l1.insert(0,1); print(l1)
+l1.remove(1);   print(l1)
+l1.pop();       print(l1)
+l1.extend(['only', 'list']); print(l1)
+
+
+
+
+
+
