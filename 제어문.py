@@ -84,12 +84,12 @@ a = 75
 b = 40
 c = 10
 print("\n출력 : 논리연산자")
-print('and : ', a > b and b > c)  # a > b > c
-print('or : ', a > b or b > c)    # 실제로  앞에 참이면 뒤는 실행하지도 않는다.  인터프리터 엔진을 통해 효율성을 추구
-print('not : ', not a > b)
-print('not : ', not b > c)
-print(not True)
-print(not False)
+print('and : ', a > b and b > c)  # a > b > c   True
+print('or : ', a > b or b > c)    # 실제로 앞에 참이면 뒤는 실행하지도 않는다. 인터프리터 엔진을 통해 효율성을 추구. True
+print('not : ', not a > b)        # False
+print('not : ', not b > c)        # False
+print(not True)                   # False
+print(not False)                  # True
 
 # 산술, 관계, 논리 우선순위
 # 산술 > 관계 > 논리 순서로 적용
