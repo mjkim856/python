@@ -388,3 +388,19 @@ for name,age in data:
 t1 = 'a','b','c',[1,2,3,4]
 t1[3][:2] = '1', '2'
 print("\n",t1)
+
+# 튜플 실습
+# 1. q, w, e, r 변수에 튜플 a의 구성요소들을 차례대로 하나씩 넣으시오.
+q,w,e,r = a
+print(q, w, e, r)
+
+# 2.  a와 b를 더한 값을 c에 넣으세요.
+c = a + b
+print(c)
+
+# 3.  4번째 구성요소 제거해 볼 것 에러가 나는 원인을 이해하고 list로 형 변환 해서  해결
+# del a(3)      SyntaxError: cannot delete function call
+a = list(a)
+print(type(a))
+del a[3]
+print(a)
