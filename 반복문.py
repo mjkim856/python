@@ -143,3 +143,105 @@ print('Reversed : ', reversed(name))
 print('List : ', list(reversed(name)))
 print('Tuple : ', tuple(reversed(name)))
 print('Set : ', set(reversed(name)))        # 순서X
+
+# ------------------------ while -------------------------
+# while <expr>:      #expression   표현식
+#    <statement(s)>   #코드
+print("\n---------------------------- while -----------------------------")
+
+# 예제1
+print("\n예제 1")
+n = 5
+while n > 0:
+    print(n)
+    n = n - 1   # n -= 1
+#    print(n) 를 아래에 두면? 
+    
+# 예제2
+a = ['foo', 'bar', 'baz']
+print("\n예제 2")
+while a:
+    print(a.pop())
+#    print(a) 만약  이렇게 출력 하면 위험한 코드가 된다. 이유는?     a = ['foo', 'bar', 'baz']   ==  True 측  while True:  로 무한하게 반복된다.  pop 함수를 사용하지 않으면 문제가 될 수 있다.
+
+# if 중첩
+# 예제3
+# break , continue
+print("\n예제 if 중첩")
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        break
+    print(n)
+print('Loop Ended.')  
+print()
+
+# 예제4
+print("\n예제 4")
+m = 5
+while m > 0:
+    m -= 1
+    if m == 2:
+        continue
+    print(m)
+print('Loop Ended.')   
+
+# 예제5
+i = 1
+print("\n예제 5")
+while i <= 10:
+    print('i:',i)
+    if i == 6:
+        break
+    i += 1
+
+# While - else 구문
+print("\n예제 While - else 구문")
+# 예제6
+n = 10
+while n > 0:
+    n -= 1
+    print(n)
+    if n == 5:
+        break
+else:
+    print('else out.')
+# 예제7 
+print("\n예제 7")
+a = ['foo', 'bar', 'baz', 'qux']
+s = 'qux'
+
+i = 0
+
+while i < len(a):
+    if a[i] == s:
+        break
+    i += 1
+else:
+    print(s, 'not found in list.')
+    
+    
+# 무한반복
+# while True:
+#     print('Foo')
+
+# 예제8
+print("\n예제 8")
+a = ['foo', 'bar', 'baz']
+while True:
+    if not a:
+        break
+    print(a.pop())
+
+# while 실습
+# 변수명 num으로 지정하고 최대 100까지 증가. 55 일 경우에만 '일치' 가 출력되고 나머지는 '불일치'가 불일치가 출력되도록 코딩해보시오.
+# (5씩 증가하도록 하시오.)
+print("\n예제 while 실습")
+num =0
+while num <= 100:
+	if num==55:
+		print("{} : 일치".format(num))
+	else:
+		print("{} : 불일치".format(num))
+	num=num+5
