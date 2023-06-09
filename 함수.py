@@ -383,6 +383,34 @@ def l_fun1(a):
 l_func1 = lambda a: True if a > 0 else False
 print("\n출력:람다2",l_func1(3))
 
+print("\n출력:람다3")
+# 변형
+lambda a: True if a > 0 else False
+lambda a: True if a > 0 else False(-2)
+False
+
+is_positive_number = lambda a: True if a > 0 else False
+print(is_positive_number(-2))
+
+
+for i in range(1,10):
+	if i % 3 == 0:
+		print("짝")
+	else:
+		print(i)
+
+#map( 함수 , 입력값)
+print(list(map(lambda x: "짝" if x % 3 == 0  else x, range(1,10))))
+
+myList = [lambda a,b:a+b, lambda a,b:a*b]
+print(myList)
+print(myList[0])
+print(myList[1])
+print(myList[0](3,4))
+print(myList[1](3,4))
+
+
+
 # ------------------------------------------
 print("\n출력 : 실습")
 # 실습문제 
